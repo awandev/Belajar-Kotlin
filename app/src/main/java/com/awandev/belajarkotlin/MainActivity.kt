@@ -3,6 +3,7 @@ package com.awandev.belajarkotlin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
@@ -20,6 +21,10 @@ class MainActivity : AppCompatActivity() {
         val rootLayout = findViewById<LinearLayout>(R.id.root_layout)
         val buttonSnack = findViewById<Button>(R.id.btn_click_snack)
         buttonSnack.setOnClickListener { Snackbar.make(rootLayout, "Ini adalah snackbar", Snackbar.LENGTH_SHORT).show() }
+
+//        untuk fragment
+        val frameLayout = findViewById<FrameLayout>(R.id.fl_main)
+        supportFragmentManager.beginTransaction().replace(R.id.fl_main, MainFragment()).commit()
 
     }
 
